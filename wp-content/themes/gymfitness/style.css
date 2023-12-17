@@ -242,7 +242,7 @@ hr {
   /* * los que se desborde quede oculto* */
   overflow: hidden;
 }
-.card:hover img{
+.card:hover img {
   transform: scale(1.1);
 }
 .card img {
@@ -251,7 +251,7 @@ hr {
   z-index: -1;
   height: 40rem;
   object-fit: cover;
-  transition:transform 300ms ease;
+  transition: transform 300ms ease;
 }
 .card .contenido {
   position: absolute;
@@ -265,4 +265,43 @@ hr {
 }
 .card .contenido p {
   color: var(--blanco);
+}
+
+/** Sidebar **/
+
+@media (min-width: 768px) {
+  .con-sidebar {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+  }
+}
+.informacion-clase {
+  font-weight: 700;
+  font-size: 2.2rem;
+  text-align: center;
+}
+/** Listado de clases sidebar **/
+
+.clases-sidebar li {
+  border-bottom: 1px solid var(--gris-claro);
+  padding: 2rem 0;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  /* align-items: center; */
+  gap: 2rem;
+}
+.clases-sidebar li:last-of-type {
+  border: none;
+}
+
+.clases-sidebar .contenido-clase h3 {
+  margin: 0;
+  font-size: 2.6rem;
+}
+.clases-sidebar .contenido-clase a {
+  color: var(--primario);
+}
+.clases-sidebar .contenido-clase p {
+  font-size: 1.2rem;
 }
