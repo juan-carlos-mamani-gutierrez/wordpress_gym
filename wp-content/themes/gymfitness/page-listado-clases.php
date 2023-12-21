@@ -5,53 +5,13 @@
 */
 get_header() ?>
 <main class="contenedor seccion ">
-    <?php
+  <?php
 
-    get_template_part('template-parts/pagina');
+  get_template_part('template-parts/pagina');
 
-    ?>
+  ?>
 
-    <ul class="listado-grid">
-        <!--  TODO consulta personalizada -->
-        <?php
-        $args = array(
-            'post_type' => 'gymfitness_clases'
-        );
-        $clases = new WP_Query($args);
-
-        //TODO recoremos la consulta
-        while ($clases->have_posts()) {
-            $clases->the_post();
-        ?>
-
-            <li class="card">
-
-                <?= the_post_thumbnail(); ?>
-
-                <div class="contenido">
-                    <a href="<?= the_permalink(); ?>">
-                        <h3> <?= the_title(); ?></h3>
-                    </a>
-
-                    <?php
-                    $hora_inicio = get_field('hora_inicio');
-                    $hora_fin = get_field('hora_fin');
-                    ?>
-                    <p><?= the_field('dias_clase'); ?> - <?= $hora_inicio . " a " . $hora_fin; ?></p>
-                </div>
-
-            </li>
-            <!-- TODO si no los enlaces no cargan ir ajustes y enlaces pernanente  y guardar
-              eso recargara los htacess -->
-
-        <?php
-        }
-        //TODO resetear la consulta
-        wp_reset_postdata();
-        ?>
-
-    </ul>
-
+  <?php gymfitness_lista_clases(); ?>
 
 </main>
 
